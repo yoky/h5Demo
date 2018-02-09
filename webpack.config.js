@@ -12,16 +12,29 @@ module.exports = {
             use: [{
                 loader: 'style-loader'
             }, {
-                loader: 'sass-loader'
-            }, {
                 loader: 'css-loader'
+            }, {
+                loader: 'sass-loader'
             }]
+        }, {
+            test: /\.js$/,
+            use: {
+                loader: "babel-loader"
+            }
+        }, {
+            test: /\.(png|jpg|gif|jpeg)$/,
+            use: {
+                loader: "url-loader?limit=8192&name=images/[hash:8].[name].[ext]"
+            }
+            // options: {
+            //     publicPath: './images'
+            // }
         }]
     },
     devServer: {
         contentBase: './build',
         historyApiFallback: true,
-        host:'10.75.164.126',
+        host: '10.75.164.126',
         inline: true
     },
     plugins: [

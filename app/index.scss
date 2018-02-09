@@ -1,0 +1,14 @@
+@function px2rem($px) {
+    $rem: 37.5px;
+    @return ($px / $rem)+rem;
+}
+
+#content {
+    .bg {
+    	width: 100%;
+    	height: 100%;
+    	height: px2rem(400px);
+        background: url(../images/chunjie.jpeg) no-repeat 100% 100%;
+
+    }
+}
